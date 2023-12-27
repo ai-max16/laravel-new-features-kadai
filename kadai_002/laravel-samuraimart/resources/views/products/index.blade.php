@@ -25,15 +25,15 @@
                      <a href="{{route('products.show', $product)}}">
                        @if ($product->image !== "")
                        <img src="{{ asset($product->image) }}" class="img-thumbnail">
+                       @else
+                       <img src="{{ asset('img/dummy.png')}}" class="img-thumbnail">
+                       @endif
                        <div class="d-flex">  
                          @if ($product->reviews()->exists())
                          <p class="star-rating" data-rate="{{ round(2 * $product->reviews->avg('score')) / 2 }}"></p>
                          <p class="review-count">{{ $product->reviews->count() }}</p>
                          @endif
                        </div>
-                       @else
-                       <img src="{{ asset('img/dummy.png')}}" class="img-thumbnail">
-                       @endif
                      </a>
                      <div class="row">
                          <div class="col-12">
