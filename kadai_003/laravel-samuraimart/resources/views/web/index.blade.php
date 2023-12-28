@@ -47,9 +47,9 @@
             <img src="{{ asset('img/dummy.png') }}" class="img-thumbnail">
             @endif
             <div class="d-flex">  
-              @if ($recommend_product->reviews()->exists())
-              <p class="star-rating" data-rate="{{ round(2 * $recommend_product->reviews->avg('score')) / 2 }}"></p>
-              <p class="review-count">{{ $recommend_product->reviews->count() }}</p>
+              @if ($recently_product->reviews()->exists())
+              <p class="star-rating" data-rate="{{ round(2 * $recently_product->reviews->avg('score')) / 2 }}"></p>
+              <p class="review-count">{{ $recently_product->reviews->count() }}</p>
               @endif
             </div>
           </a>
